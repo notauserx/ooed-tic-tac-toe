@@ -2,8 +2,6 @@
 {
     internal class GameStateManagerTests
     {
-        
-       
 
         [Test]
         public void testWinOnFirstDiagonal()
