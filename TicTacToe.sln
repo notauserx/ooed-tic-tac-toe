@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.ConsoleApp", "Tic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Domain", "TicTacToe.Domain\TicTacToe.Domain.csproj", "{88444867-F744-4237-9A12-ABCDD7BD9070}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.Domain.Tests", "TicTacToe.Domain.Tests\TicTacToe.Domain.Tests.csproj", "{3D680D35-2E24-4D59-8DE9-0683B0B3B80A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Domain.Tests", "TicTacToe.Domain.Tests\TicTacToe.Domain.Tests.csproj", "{3D680D35-2E24-4D59-8DE9-0683B0B3B80A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{805E79EA-C223-44F7-A7B1-DA97ACA1857B}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
