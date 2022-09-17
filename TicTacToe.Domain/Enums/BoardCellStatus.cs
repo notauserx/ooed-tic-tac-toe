@@ -1,6 +1,8 @@
 ﻿namespace TicTacToe.Domain;
 
-public enum PlayerMove{
+public enum BoardCellStatus
+{
+    Empty,
     X,
     O
 }
