@@ -38,5 +38,14 @@
 
             Assert.That(stateManager.GameOutcome, Is.EqualTo(GameOutcome.Tied));
         }
+
+        [Test]
+        public void testFirstColWinForX()
+        {
+            GameStateManager stateManager = new GameStateManager();
+            stateManager.UpdateState(BoardArranger.getBoardWithFirstCollWinForX());
+
+            Assert.That(stateManager.GameOutcome, Is.EqualTo(GameOutcome.XWon));
+        }
     }
 }
