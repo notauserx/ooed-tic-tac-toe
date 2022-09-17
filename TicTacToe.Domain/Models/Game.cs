@@ -8,9 +8,9 @@ public class Game
 
     public Board Board { get; set; }
 
-    public GameStateManager StateManager { get; set; }
+    public GameStateManager StateManager { get; private set; }
 
-    private Player currentPlayer;
+    public Player CurrentPlayer { get; private set; }
 
     public Game(Player playerX, Player playerO, Board board, GameStateManager gameStateManager)
     {
@@ -20,14 +20,14 @@ public class Game
 
         StateManager = gameStateManager;
 
-        currentPlayer = playerX;
+        CurrentPlayer = playerX;
     }
 
     public void MarkPosition(Position position)
     {
         if (StateManager.GameState == GameState.Finished) return;
 
-        if (currentPlayer == PlayerX)
+        if (CurrentPlayer == PlayerX)
             mark(BoardCellStatus.X, position);
         else
             mark(BoardCellStatus.O, position);
@@ -40,7 +40,7 @@ public class Game
 
     public void SwitchPlayer() =>
     
-        currentPlayer = currentPlayer == PlayerX
+        CurrentPlayer = CurrentPlayer == PlayerX
             ? PlayerO
             : PlayerX;
 

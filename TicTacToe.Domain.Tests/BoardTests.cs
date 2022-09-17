@@ -12,4 +12,6 @@ internal class BoardTests
             Assert.That(cell.Status, Is.EqualTo(BoardCellStatus.Empty));
         }
     }
+
+    
 }

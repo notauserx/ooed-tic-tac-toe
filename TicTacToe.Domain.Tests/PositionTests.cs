@@ -48,4 +48,21 @@ internal class PositionTests
         foreach (var position in positions)
             Assert.That(position.IsSecondDiagonal(), Is.True);
     }
+
+    [Test]
+    public void nonSecondDiagonalPositionsReturnFalseOnIsSecondDiagonal()
+    {
+        Position[] positions = new[] {
+            new Position(0, 1),
+            new Position(0, 0),
+            new Position(1, 0),
+            new Position(1, 2),
+            new Position(2, 2),
+            new Position(2, 1),
+            };
+
+        foreach (var position in positions)
+            Assert.That(position.IsFirstDiagonal(), Is.False);
+
+    }
 }

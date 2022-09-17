@@ -17,7 +17,7 @@ public class Player
         return new Player(PlayerMove.X, playerName);
     }
 
-    public static Player CreatePlayerY(string playerName = "Player Two")
+    public static Player CreatePlayerO(string playerName = "Player Two")
     {
         return new Player(PlayerMove.O, playerName);
     }
