@@ -33,4 +33,14 @@ public class Board
         return Data[position.X][position.Y]?.Status == BoardCellStatus.Empty;
     }
 
+    public Cell GetCell(Position position)
+    {
+        return Data[position.X][position.Y];
+    }
+
+    public IEnumerable<Cell> GetCellsAsEnumerable()
+    {
+        return Data.SelectMany(x => x);
+    }
+
 }

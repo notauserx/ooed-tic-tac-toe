@@ -5,26 +5,35 @@ namespace TicTacToe.ConsoleApp;
 
 internal class TicTacToeGameRunner
 {
-    private readonly ITicTacToeGameService gameService;
+    private readonly Game game;
     private readonly IBoardPrintService printService;
 
-    public TicTacToeGameRunner(ITicTacToeGameService gameService,
+    public TicTacToeGameRunner(Game game,
         IBoardPrintService printService)
     {
-        this.gameService = gameService;
+        this.game = game;
         this.printService = printService;
     }
     public void Start()
     {
         printInstructions();
 
-        while(!gameService.IsGameOver())
+        while(!game.IsGameOver())
         {
             promptForInput();
-            var position = takeInputPositionToMark();
-            // TODO :: check if position is empty;
-            gameService.Mark(position);
-            printService.Print(gameService.GetBoard());
+            Position position;
+            while (true)
+            {
+                position = takeInputPositionToMark();
+                if (game.IsPositionOpen(position))
+                    break;
+                else
+                {
+                    Console.WriteLine("Position is already taken, try an empty position.");
+                }
+            }
+            game.HandleMove(position);
+            printService.Print(game.Board);
         }
 
         // TODO :: print game outcome
@@ -33,12 +42,13 @@ internal class TicTacToeGameRunner
     private void printInstructions()
     {
         Console.WriteLine("___________Welcome to a game of tic tac toe____________");
+        printService.Print(game.Board);
         Console.WriteLine("Please enter a number between 1 to 9 to mark the board.");
     }
 
     private void promptForInput()
     {
-        Console.WriteLine("Player: {0}", gameService.GetCurrentPlayer().Name);
+        Console.WriteLine("Player: {0}", game.CurrentPlayer.Name);
         Console.WriteLine("____________Enter a number between 1 to 9______________");
     }
 

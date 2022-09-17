@@ -6,7 +6,7 @@ using TicTacToe.ConsoleApp;
 
 
 var gameRunner = new TicTacToeGameRunner(
-    TicTacToeGameService.CreateSimpleGameService(),
+    new Game(),
     new BoardPrintService());
 
 gameRunner.Start();
