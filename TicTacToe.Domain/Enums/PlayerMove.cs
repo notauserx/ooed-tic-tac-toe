@@ -21,11 +21,3 @@ public enum GameOutcome
     OWon
 }
 
-
-// TODO :: remove this enum, can be calculated from GameOutcome
-public enum GameState
-{
-    Running,
-    Finished
-}
-
