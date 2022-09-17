@@ -25,4 +25,14 @@ public class Position
             (X == 0 && Y == 2) ||
             (X == 2 && Y == 0);
     }
+
+    public bool IsOnRow(int row)
+    {
+        return X == row;
+    }
+
+    public bool IsOnCol(int col)
+    {
+        return Y == col;
+    }
 }
