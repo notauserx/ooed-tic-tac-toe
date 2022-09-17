@@ -13,12 +13,12 @@ public class Position
         Y = y;
     }
 
-    public bool IsFirstDiagonal()
+    public bool IsOnFirstDiagonal()
     {
         return X == Y;
     }
 
-    public bool IsSecondDiagonal()
+    public bool IsOnSecondDiagonal()
     {
         return 
             (X == 1 && Y == 1) ||

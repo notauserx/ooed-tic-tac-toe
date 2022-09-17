@@ -69,14 +69,14 @@ public class Game
 
 
        
-        if(position.IsFirstDiagonal())
+        if(position.IsOnFirstDiagonal())
         {
             // check if first diagonal is won
-            isWon = isWon || cells.Where(c => c.Position.IsFirstDiagonal()).All(d => d.Status == cellStatus);
+            isWon = isWon || cells.Where(c => c.Position.IsOnFirstDiagonal()).All(d => d.Status == cellStatus);
         }
-        if(position.IsSecondDiagonal())
+        if(position.IsOnSecondDiagonal())
         {
-            isWon = isWon ||cells.Where(c => c.Position.IsSecondDiagonal()).All(d => d.Status == cellStatus);
+            isWon = isWon ||cells.Where(c => c.Position.IsOnSecondDiagonal()).All(d => d.Status == cellStatus);
         }
 
         UpdateGameContext(isWon);

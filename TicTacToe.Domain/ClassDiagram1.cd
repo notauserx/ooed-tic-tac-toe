@@ -34,7 +34,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="TicTacToe.Domain.Player">
-    <Position X="6.5" Y="2.5" Width="1.5" />
+    <Position X="7.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAgAAAEAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
@@ -43,7 +43,7 @@
   <Class Name="TicTacToe.Domain.Position">
     <Position X="1" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAEACAAAAAAAAAAAAAAAIAAAAAYAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAIAAAIAYAA=</HashCode>
       <FileName>Models\Position.cs</FileName>
     </TypeIdentifier>
   </Class>

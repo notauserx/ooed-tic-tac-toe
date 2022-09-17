@@ -1,6 +1,7 @@
 ﻿namespace TicTacToe.Domain;
 
-public enum PlayerMove{
+public enum PlayerMove
+{
     X,
     O
 }

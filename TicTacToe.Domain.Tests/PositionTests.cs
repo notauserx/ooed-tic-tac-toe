@@ -14,7 +14,7 @@ internal class PositionTests
 
 
         foreach (var position in positions)
-            Assert.That(position.IsFirstDiagonal(), Is.True);
+            Assert.That(position.IsOnFirstDiagonal(), Is.True);
 
     }
 
@@ -31,7 +31,7 @@ internal class PositionTests
             };
 
         foreach(var position in positions)
-            Assert.That(position.IsFirstDiagonal(), Is.False);
+            Assert.That(position.IsOnFirstDiagonal(), Is.False);
 
     }
 
@@ -46,7 +46,7 @@ internal class PositionTests
 
 
         foreach (var position in positions)
-            Assert.That(position.IsSecondDiagonal(), Is.True);
+            Assert.That(position.IsOnSecondDiagonal(), Is.True);
     }
 
     [Test]
@@ -62,7 +62,7 @@ internal class PositionTests
             };
 
         foreach (var position in positions)
-            Assert.That(position.IsSecondDiagonal(), Is.False);
+            Assert.That(position.IsOnSecondDiagonal(), Is.False);
 
     }
 
