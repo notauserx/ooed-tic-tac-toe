@@ -3,13 +3,20 @@
 internal class GameTests
 {
     [Test]
-    public void gameContructorInitializesPlayerXAsCurrentPlayer()
+    public void gameContructorInitializesAnEmptyBoard()
     {
-        var game = new Game(Player.CreatePlayerX(), 
-            Player.CreatePlayerO(), 
-            new Board(), 
-            new GameStateManager());
+        var game = new Game(Player.CreatePlayerX(),
+            Player.CreatePlayerO(),
+            new Board());
 
-        Assert.That(game.CurrentPlayer, Is.EqualTo(game.PlayerX));
+        for(var i = 0; i < 3; i++)
+        {
+            for (var j = 0; j < 3; j++)
+            {
+                Assert.That(game.Board.Data[i][j].Status, Is.EqualTo(BoardCellStatus.Empty));
+
+            }
+        }
+
     }
 }
