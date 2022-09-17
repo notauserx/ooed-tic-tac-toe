@@ -11,6 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Domain.Tests", "T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{805E79EA-C223-44F7-A7B1-DA97ACA1857B}"
 	ProjectSection(SolutionItems) = preProject
+		ClassDiagram1.png = ClassDiagram1.png
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject

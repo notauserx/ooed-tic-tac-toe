@@ -69,22 +69,41 @@
 
         }
 
-        //[Test]
-        //public void testFirstColWinForX()
-        //{
-        //    GameStateManager stateManager = new GameStateManager();
-        //    stateManager.UpdateState(BoardArranger.getBoardWithFirstCollWinForX());
+        [Test]
+        public void testFirstColWinForX()
+        {
+            Game game = new Game();
 
-        //    Assert.That(stateManager.GameOutcome, Is.EqualTo(GameOutcome.XWon));
-        //}
+            Assert.That(game.Outcome, Is.EqualTo(GameOutcome.Ongoing));
 
-        //[Test]
-        //public void testLastRowWinForX()
-        //{
-        //    GameStateManager stateManager = new GameStateManager();
-        //    stateManager.UpdateState(BoardArranger.getBoardWithLastRowWinForX());
+            game.HandleMove(new Position(0, 0)); // x
+            game.HandleMove(new Position(1, 0)); // o
+            game.HandleMove(new Position(0, 1)); // x
 
-        //    Assert.That(stateManager.GameOutcome, Is.EqualTo(GameOutcome.XWon));
-        //}
+            game.HandleMove(new Position(1, 1)); // o
+
+            game.HandleMove(new Position(0, 2)); // x
+
+            Assert.That(game.Outcome, Is.EqualTo(GameOutcome.XWon));
+        }
+
+        [Test]
+        public void testLastRowWinForX()
+        {
+            Game game = new Game();
+            game.CurrentPlayer = game.PlayerX;
+
+            Assert.That(game.Outcome, Is.EqualTo(GameOutcome.Ongoing));
+
+            game.HandleMove(new Position(2, 0));
+            game.HandleMove(new Position(1, 0));
+            game.HandleMove(new Position(2, 1));
+
+            game.HandleMove(new Position(1, 1));
+            game.HandleMove(new Position(2, 2));
+
+            Assert.That(game.Outcome, Is.EqualTo(GameOutcome.XWon));
+
+        }
     }
 }
