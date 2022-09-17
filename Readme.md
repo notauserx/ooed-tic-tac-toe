@@ -27,7 +27,7 @@ The solution is devided into three projects
 
 Below is a class diagram of the domain models.
 
-![Class Diagram](./classDiagram.png)
+![Class Diagram](./ClassDiagram1.png)
 
 
 ## TODO
