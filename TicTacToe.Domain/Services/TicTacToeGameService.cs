@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe.Domain.Services;
 
-internal class TicTacToeGameService
+public class TicTacToeGameService : ITicTacToeGameService
 {
     private readonly Game game;
     private readonly GameStateManager stateManager;
@@ -9,10 +9,13 @@ internal class TicTacToeGameService
     {
         game = new Game(x, o, new Board());
         currentPlayer = game.PlayerX;
+        stateManager = new GameStateManager();
     }
 
     public void Mark(Position position)
     {
+        if (stateManager.GameState == GameState.Finished) return;
+
         markPosition(position);
         switchPlayer();
         stateManager.UpdateState(game.Board);
@@ -20,14 +23,10 @@ internal class TicTacToeGameService
 
     private void markPosition(Position position)
     {
-        if (stateManager.GameState == GameState.Finished) return;
-
         if (currentPlayer == game.PlayerX)
             game.Board.Mark(BoardCellStatus.X, position);
         else
             game.Board.Mark(BoardCellStatus.O, position);
-
-
     }
 
     private void switchPlayer() =>
@@ -39,5 +38,20 @@ internal class TicTacToeGameService
     public static TicTacToeGameService CreateSimpleGameService()
     {
         return new TicTacToeGameService(Player.CreatePlayerX(), Player.CreatePlayerO());
+    }
+
+    public bool IsGameOver()
+    {
+        return stateManager.GameOutcome != GameOutcome.Ongoing;
+    }
+
+    public Player GetCurrentPlayer()
+    {
+        return currentPlayer;
+    }
+
+    public Board GetBoard()
+    {
+        return game.Board;
     }
 }

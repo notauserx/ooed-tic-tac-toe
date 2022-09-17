@@ -1,4 +1,4 @@
-﻿namespace TicTacToe.Domain;
+﻿namespace TicTacToe.Domain.Services;
 public class BoardPrintService : IBoardPrintService
 {
     public void Print(Board board)
