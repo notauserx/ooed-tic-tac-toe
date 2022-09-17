@@ -12,6 +12,10 @@ public class TicTacToeGameService : ITicTacToeGameService
         stateManager = new GameStateManager();
     }
 
+    public Board GetBoard() => game.Board;
+
+    public Player GetCurrentPlayer() => currentPlayer;
+
     public void Mark(Position position)
     {
         if (stateManager.GameState == GameState.Finished) return;
@@ -20,6 +24,9 @@ public class TicTacToeGameService : ITicTacToeGameService
         switchPlayer();
         stateManager.UpdateState(game.Board);
     }
+
+    public bool IsGameOver() => stateManager.GameState == GameState.Finished;
+
 
     private void markPosition(Position position)
     {
@@ -30,7 +37,6 @@ public class TicTacToeGameService : ITicTacToeGameService
     }
 
     private void switchPlayer() =>
-
         currentPlayer = currentPlayer == game.PlayerX
             ? game.PlayerO
             : game.PlayerX;
@@ -40,18 +46,4 @@ public class TicTacToeGameService : ITicTacToeGameService
         return new TicTacToeGameService(Player.CreatePlayerX(), Player.CreatePlayerO());
     }
 
-    public bool IsGameOver()
-    {
-        return stateManager.GameOutcome != GameOutcome.Ongoing;
-    }
-
-    public Player GetCurrentPlayer()
-    {
-        return currentPlayer;
-    }
-
-    public Board GetBoard()
-    {
-        return game.Board;
-    }
 }

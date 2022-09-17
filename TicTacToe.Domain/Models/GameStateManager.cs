@@ -6,6 +6,12 @@ public class GameStateManager
 
     public GameOutcome GameOutcome { get; set; }
 
+    public GameStateManager()
+    {
+        GameState = GameState.Running;
+        GameOutcome = GameOutcome.Ongoing;
+    }
+
 
     public void UpdateState(Board board)
     {
@@ -14,24 +20,26 @@ public class GameStateManager
 
         var xWon = isWon(cells, BoardCellStatus.X);
         var oWon = isWon(cells, BoardCellStatus.O);
+        var gameTied = false;
 
         if (xWon)
         {
             GameOutcome = GameOutcome.XWon;
         }
-
-        if (oWon)
+        else if (oWon)
         {
             GameOutcome = GameOutcome.OWon;
         }
-
-        var isCompleted = isComplete(cells);
-        if(!xWon && !oWon && isCompleted)
+        else
         {
-            GameOutcome = GameOutcome.Tied;
+            gameTied = isComplete(cells);
+            if (!xWon && !oWon && gameTied)
+            {
+                GameOutcome = GameOutcome.Tied;
+            }
         }
 
-        if (xWon || oWon || isCompleted)
+        if (xWon || oWon || gameTied)
         {
             GameState = GameState.Finished;
         }
@@ -40,10 +48,10 @@ public class GameStateManager
     private bool isWon(IEnumerable<Cell> cells, BoardCellStatus status)
     {
 
-        var hasAnyRow = Enumerable.Range(0, 2)
+        var hasAnyRow = Enumerable.Range(0, 3)
             .Any(x => checkWithPredicate(cells, c => c.Position.X == x, status));
 
-        var hasAnyCol = Enumerable.Range(0, 2)
+        var hasAnyCol = Enumerable.Range(0, 3)
             .Any(y => checkWithPredicate(cells, c => c.Position.Y == y, status));
 
         var hasADiagonal = checkDiagonal(cells, status);

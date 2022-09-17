@@ -47,5 +47,14 @@
 
             Assert.That(stateManager.GameOutcome, Is.EqualTo(GameOutcome.XWon));
         }
+
+        [Test]
+        public void testLastRowWinForX()
+        {
+            GameStateManager stateManager = new GameStateManager();
+            stateManager.UpdateState(BoardArranger.getBoardWithLastRowWinForX());
+
+            Assert.That(stateManager.GameOutcome, Is.EqualTo(GameOutcome.XWon));
+        }
     }
 }
