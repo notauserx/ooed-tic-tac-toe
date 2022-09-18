@@ -1,9 +1,7 @@
-﻿using System.IO;
-using TicTacToe.Domain;
+﻿using TicTacToe.Domain;
 using TicTacToe.Domain.Services;
-using TicTacToe.ConsoleApp;
 
-namespace ConsoleApp.Tests;
+namespace TicTacToe.ConsoleApp.Tests;
 
 public class TicTacToeRunnerTests
 {
