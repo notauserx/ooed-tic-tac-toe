@@ -2,14 +2,16 @@
 
 My attempt at making a tic tac toe model with OOP principles.
 
-The solution is devided into three projects
+The solution is devided into four projects
 
 - ConsoleApp
     - Manages running the game in the console.
+- ConsoleApp.Tests
+    - Contains tests for the console app.
 - Domain
     - Leeps the types that represent the tic tac toe world.
 - Domain.Tests
-    - contains the unit tests for the domain.
+    - Contains the unit tests for the domain.
 
 
 ## Program flow and notes
@@ -27,7 +29,30 @@ The solution is devided into three projects
 
 Below is a class diagram of the domain models.
 
-![Class Diagram](./ClassDiagram1.png)
+ ___________________________________________________________________________________________
+|   ____________                         ____________                                       |   
+|  |            |                       |            |                                      |
+|  | CellStatus |                       |   Outcome  |                                      |
+|  |____________|                       |____________|                  _______________     |
+|        ^                                     ^                       |               |    |
+|        |                                     |             |-------->|    Player X   |    |
+|        |                                     |             |         |_______________|    |
+|    ____|_____         _______          ______|_____        |          _______________     |
+|   |          |       |       |        |            |       |         |               |    |
+|   |   Cell   |<------| Board |<-------|    Game    |-------|-------->| CurrentPlayer |    |
+|   |__________|       |_______|        |____________|       |         |_______________|    |
+|        |                                                   |          _______________     |
+|        |                                                   |         |               |    |
+|        |                                                   |-------->|    Player O   |    |
+|        |                                                             |_______________|    |
+|        |                                                                                  |
+|    ____V_____                                                                             |
+|   |          |                                                                            |
+|   | Position |                                                                            |
+|   |__________|                                                                            |
+|                                                                                           |
+|___________________________________________________________________________________________|
+
 
 
 ## TODO
