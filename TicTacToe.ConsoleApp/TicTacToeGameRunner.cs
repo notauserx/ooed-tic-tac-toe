@@ -1,9 +1,11 @@
-﻿using TicTacToe.Domain;
+﻿using System.Runtime.CompilerServices;
+using TicTacToe.Domain;
 using TicTacToe.Domain.Services;
 
+[assembly: InternalsVisibleTo("ConsoleApp.Tests")]
 namespace TicTacToe.ConsoleApp;
 
-internal class TicTacToeGameRunner
+public class TicTacToeGameRunner
 {
     private readonly Game game;
     private readonly IBoardPrintService printService;
@@ -16,8 +18,6 @@ internal class TicTacToeGameRunner
     }
     public void Start()
     {
-        printInstructions();
-
         while(!game.IsGameOver())
         {
             promptForInput();
@@ -41,20 +41,20 @@ internal class TicTacToeGameRunner
 
     }
 
-    private void printInstructions()
+    public void PrintInstructions()
     {
         Console.WriteLine("___________Welcome to a game of tic tac toe____________");
         printService.Print(game.Board);
         Console.WriteLine("Please enter a number between 1 to 9 to mark the board.");
     }
 
-    private void promptForInput()
+    internal void promptForInput()
     {
         Console.WriteLine("Player: {0}", game.CurrentPlayer.Name);
-        Console.WriteLine("____________Enter a number between 1 to 9______________");
+        Console.WriteLine("Enter a number between 1 to 9 to mark the cell");
     }
 
-    private Position takeInputPositionToMark()
+    internal Position takeInputPositionToMark()
     {
         int position;
 
@@ -68,7 +68,7 @@ internal class TicTacToeGameRunner
                 break;
             }
             Console.WriteLine("Wrong input: {0}", input);
-            Console.WriteLine("____________Enter a number between 1 to 9______________");
+            Console.WriteLine("Enter a number between 1 to 9 to mark the cell");
 
         }
         return new Position(position / 3, position % 3);
@@ -76,7 +76,7 @@ internal class TicTacToeGameRunner
 
     }
 
-    public string getOutComeMessage(GameOutcome outcome) => outcome switch
+    internal string getOutComeMessage(GameOutcome outcome) => outcome switch
     {
         GameOutcome.Tied => "Game tied",
         GameOutcome.XWon => "X won",

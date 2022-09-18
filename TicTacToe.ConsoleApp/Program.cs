@@ -9,4 +9,5 @@ var gameRunner = new TicTacToeGameRunner(
     new Game(),
     new BoardPrintService());
 
+gameRunner.PrintInstructions();
 gameRunner.Start();
