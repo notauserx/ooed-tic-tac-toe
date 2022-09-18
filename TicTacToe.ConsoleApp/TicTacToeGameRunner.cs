@@ -36,7 +36,9 @@ internal class TicTacToeGameRunner
             printService.Print(game.Board);
         }
 
-        // TODO :: print game outcome
+        Console.WriteLine("Game over..");
+        Console.WriteLine(getOutComeMessage(game.Outcome));
+
     }
 
     private void printInstructions()
@@ -73,5 +75,13 @@ internal class TicTacToeGameRunner
 
 
     }
+
+    public string getOutComeMessage(GameOutcome outcome) => outcome switch
+    {
+        GameOutcome.Tied => "Game tied",
+        GameOutcome.XWon => "X won",
+        GameOutcome.OWon => "O won",
+        _ => throw new NotSupportedException()
+    };
 
 }
