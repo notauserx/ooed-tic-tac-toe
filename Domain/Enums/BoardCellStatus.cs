@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe.Domain;
 
-public enum BoardCellStatus
+public enum CellStatus
 {
     Empty,
     X,

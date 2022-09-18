@@ -20,7 +20,7 @@ public class Board
 
     public Board(Cell[][] data) { this.Data = data; }
 
-    public void Mark(BoardCellStatus status, Position position)
+    public void Mark(CellStatus status, Position position)
     {
         if (IsPositionOpen(position))
         {
@@ -30,7 +30,7 @@ public class Board
 
     public bool IsPositionOpen(Position position)
     {
-        return Data[position.X][position.Y]?.Status == BoardCellStatus.Empty;
+        return Data[position.X][position.Y]?.Status == CellStatus.Empty;
     }
 
     public Cell GetCell(Position position)

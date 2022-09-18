@@ -9,7 +9,7 @@ internal class BoardTests
 
         foreach (var cell in cells)
         {
-            Assert.That(cell.Status, Is.EqualTo(BoardCellStatus.Empty));
+            Assert.That(cell.Status, Is.EqualTo(CellStatus.Empty));
         }
     }
 

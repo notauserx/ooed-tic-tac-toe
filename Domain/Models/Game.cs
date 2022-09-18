@@ -30,7 +30,7 @@ public class Game
 
     public bool IsGameOver() => Outcome != GameOutcome.Ongoing;
 
-    public bool IsPositionOpen(Position position) => Board.GetCell(position).Status == BoardCellStatus.Empty; 
+    public bool IsPositionOpen(Position position) => Board.GetCell(position).Status == CellStatus.Empty; 
 
     public void HandleMove(Position position)
     {
@@ -111,8 +111,8 @@ public class Game
             ? PlayerO
             : PlayerX;
 
-    private BoardCellStatus getBoardCellStatusForCurrentPlayer() =>
+    private CellStatus getBoardCellStatusForCurrentPlayer() =>
          CurrentPlayer.Move == PlayerMove.X
-            ? BoardCellStatus.X
-            : BoardCellStatus.O;
+            ? CellStatus.X
+            : CellStatus.O;
 }

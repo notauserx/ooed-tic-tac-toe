@@ -13,7 +13,7 @@ internal class GameTests
         {
             for (var j = 0; j < 3; j++)
             {
-                Assert.That(game.Board.Data[i][j].Status, Is.EqualTo(BoardCellStatus.Empty));
+                Assert.That(game.Board.Data[i][j].Status, Is.EqualTo(CellStatus.Empty));
 
             }
         }
@@ -29,7 +29,7 @@ internal class GameTests
         {
             for (var j = 0; j < 3; j++)
             {
-                Assert.That(game.Board.Data[i][j].Status, Is.EqualTo(BoardCellStatus.Empty));
+                Assert.That(game.Board.Data[i][j].Status, Is.EqualTo(CellStatus.Empty));
 
             }
         }

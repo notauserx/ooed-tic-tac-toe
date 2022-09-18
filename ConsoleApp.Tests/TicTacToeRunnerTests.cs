@@ -5,13 +5,6 @@ namespace TicTacToe.ConsoleApp.Tests;
 
 public class TicTacToeRunnerTests
 {
-
-    public TicTacToeRunnerTests()
-    {
-
-    }
-
-
     [Fact]
     public void testPromtInstructions()
     {

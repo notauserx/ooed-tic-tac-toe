@@ -25,11 +25,11 @@ public class BoardPrintService : IBoardPrintService
 
     }
 
-    public string GetCellContent(BoardCellStatus status) => status switch
+    public string GetCellContent(CellStatus status) => status switch
     {
-        BoardCellStatus.X => "X",
-        BoardCellStatus.O => "O",
-        BoardCellStatus.Empty => " ",
+        CellStatus.X => "X",
+        CellStatus.O => "O",
+        CellStatus.Empty => " ",
 
     };
 }
