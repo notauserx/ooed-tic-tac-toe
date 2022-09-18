@@ -29,6 +29,7 @@ The solution is devided into four projects
 
 Below is a class diagram of the domain models.
 
+```text
  ___________________________________________________________________________________________
 |   ____________                         ____________                                       |   
 |  |            |                       |            |                                      |
@@ -52,7 +53,7 @@ Below is a class diagram of the domain models.
 |   |__________|                                                                            |
 |                                                                                           |
 |___________________________________________________________________________________________|
-
+```
 
 
 ## TODO
